@@ -26,7 +26,13 @@ public class CustomView extends View {
         //创建视图
         Draw draw=new Draw(rect);
         draw.Drawall(canvas);
-
+        if(Function!=null||Function.length()!=0){
+            Plot plot=new Plot(draw,Function,"x");
+            plot.hua(canvas);
+        }
+    }
+    public void setStrFunction(String strFunction) {
+        this.Function = strFunction;
     }
 
     public CustomView(Context context) {
